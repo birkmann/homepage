@@ -1,7 +1,5 @@
-document.querySelector('body').classList.remove('preload');
+document.querySelector('html').classList.remove('no-js');
 
-var el = document.querySelector('.nav-toggle');
-el.onclick = function() {
-	document.querySelector('body').classList.toggle('open');
-	document.querySelector('.burger').classList.toggle('open');
-}
+window.onload = function(){
+		document.querySelector('body').classList.add('loaded');
+}, 250;
