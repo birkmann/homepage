@@ -60,10 +60,10 @@ body {
 }
 
 @keyframes curldown {
-	from {
+	0% {
 		transform: translateY(-100%);
 	}
-	to {
+	100% {
 		transform: translateY(0%);
 	}
 }
@@ -76,7 +76,7 @@ body {
 
 body.loaded .hidden {
 	visibility: visible;
-	animation: curldown 1.2s ease-in-out;
+	animation: curldown 0.5s ease-in-out;
 }
 
 body.loaded .loader {
@@ -84,22 +84,58 @@ body.loaded .loader {
 }
 
 a.logo {
-	width: 75px;
+	width: 100px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 1.5em;
 	text-decoration: none;
 	color: #ccc;
-	background: #262d38;
+	background: #000;
 	display: block;
 }
 
 .container {
 	max-width: 90%;
 	margin: 0 auto;
-	border-left: 1px solid #d3d8dd;
-	border-right: 1px solid #d3d8dd;
 	min-height: 100vh;
+}
+
+header.main  {
+	display: flex;
+}
+
+.nav-toggle {
+	margin-left: auto;
+	cursor: pointer;
+}
+
+nav.main {
+	transform: translateY(-100%);
+	transition: all 0.5s ease-in-out;
+	width: 100%;
+	height: 100%;
+	background: #111;
+	position: fixed;
+	z-index: 1;
+}
+
+body.open nav.main {
+	transform: translateY(0%);
+	transition: all 0.5s ease-in-out;
+}
+
+nav.main .nav-close {
+	position: absolute;
+	top: 0;
+	right: 5%;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	background: #000;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
 }
