@@ -26,46 +26,52 @@ body {
 }
 
 .loader {
-	width: 25vh;
-	height: 25vh;
-	background: #f00;
+	width: 100px; 
+  	height: 57.74px;
+	background: #fff;
 	display: block;
 	animation: loader-spinning 2s linear infinite;
-	border-radius: 100%;
-	/*
-	transform-origin: 50% 50%;
-	*/
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	border: 20px solid #fff;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
 }
 
 .loader:before {
-	content: "";
-	width: 30vh;
-	height: 40px;
-	background: #fff;
-	display: block;
-	top: 50%;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%,-50%);
-	border-radius: 2px;
+  bottom: 100%;
+  border-bottom: 28.87px solid #fff;
 }
 
 .loader:after {
-	content: "";
-	width: 40px;
-	height: 30vh;
+  top: 100%;
+  width: 0;
+  border-top: 28.87px solid #fff;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.25s ease-in-out;
 	background: #fff;
-	display: block;
-	top: 50%;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%,-50%);
-	border-radius: 2px;
+	min-height: 100vh;
+}
+
+body.loaded .hidden {
+	visibility: visible;
+	opacity: 1;
+}
+
+body.loaded .loader {
+	
 }

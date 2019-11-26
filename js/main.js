@@ -1,5 +1,14 @@
 document.querySelector('html').classList.remove('no-js');
 
-window.onload = function(){
+function onReady(callback) {
+	var intervalId = window.setInterval(function() {
+		if (document.getElementsByTagName('body')[0] !== undefined) {
+			window.clearInterval(intervalId);
+			callback.call(this);
+		}
+	}, 250);
+}
+
+onReady(function() {
 	document.querySelector('body').classList.add('loaded');
-}, 250;
+});
