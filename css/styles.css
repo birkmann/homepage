@@ -28,10 +28,10 @@ body {
 .loader {
 	width: 25vh;
 	height: 25vh;
-	background: #000;
+	background: #f00;
 	display: block;
-	animation: loader-spinning 1s ease-in-out;
-	border-radius: 50px;
+	animation: loader-spinning 2s linear infinite;
+	border-radius: 100%;
 	/*
 	transform-origin: 50% 50%;
 	*/
@@ -41,4 +41,31 @@ body {
 	bottom: 0;
 	left: 0;
 	margin: auto;
+	border: 20px solid #fff;
+}
+
+.loader:before {
+	content: "";
+	width: 30vh;
+	height: 40px;
+	background: #fff;
+	display: block;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	border-radius: 2px;
+}
+
+.loader:after {
+	content: "";
+	width: 40px;
+	height: 30vh;
+	background: #fff;
+	display: block;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	border-radius: 2px;
 }
