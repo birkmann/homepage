@@ -7,6 +7,9 @@ body {
 	width: 100%;
 	background: #000;
 	position: relative;
+}
+
+body.loading {
 	background-image: url("../img/body.jpg");
 	background-size: cover;
 	background-position: center;
@@ -74,8 +77,9 @@ body.loaded .loader {
 	background: #000;
 	min-height: 100vh;
 	background-size: cover;
-	background-position: center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 }
 
 body.loaded .hidden {
@@ -356,7 +360,7 @@ body.loaded .vertical-lines span {
     width: 1px;
     height: 0;
     background-color: #fff;
-    opacity: .2;
+    opacity: .1;
 }
 
 .vertical-lines span.one {
@@ -384,46 +388,40 @@ body.loaded .vertical-lines span {
     transition: height 1.5s ease-in-out;
 }
 
+@media (max-width: 960px) {
+	.vertical-lines span.one,
+	.vertical-lines span.three,
+	.vertical-lines span.five {
+		opacity: 0;
+	}
+}
+
 
 main.content {
-	position: absolute;
-	left: 12.5%;
+	position: relative;
 	z-index: 100;
+	max-width: 90%;
+	margin: 150px auto;
 	color: #fff;
-	top: 10%;
-	width: 56.25%;
-	padding: 5%;
 }
 
-form {
-	width: 100%;
-	padding: 5%;
-	border: 1px solid rgba(255,255,255,0.5);
+@media (min-width: 960px) {
+	main.content {
+		position: absolute;
+	    left: 16.5%;
+	    top: 10%;
+	    width: 66.25%;
+	    padding: 5%;
+	    margin: 0;
+	}
 }
 
-form input,
-form textarea,
-form button {
-	width: 100%;
-	padding: 2%;
-	border: 1px solid rgba(255,255,255,0.5);
-	background: none;
-	font: inherit;
-	color: #fff;
-	display: block;
-	margin-bottom: 2%;
+main.content h2 {
+	font-size: 3.5em;
+	line-height: 1.2em;
 }
 
-form textarea {
-	min-height: 200px;
-}
-
-form button {
-	margin-bottom: 0;
-	cursor: pointer;
-}
-
-form button:hover {
-	background: #fff;
-	color: #000;
+main.content p {
+	font-size: 1.5em;
+	line-height: 1.6em;
 }
