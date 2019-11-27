@@ -6,6 +6,10 @@ body {
 	overflow-y: scroll;
 	width: 100%;
 	background: #000;
+	position: relative;
+	background-image: url("../img/body.jpg");
+	background-size: cover;
+	background-position: center;
 }
 
 *, *:before, *:after {
@@ -14,10 +18,12 @@ body {
 
 @keyframes loader-spinning {
 	from {
-		transform: rotate(0deg);
+		opacity: 1;
+		transform: rotate(-90deg);
 	}
 	to {
-		transform: rotate(360deg);
+		opacity: 0;
+		transform: rotate(180deg);
 	}
 }
 
@@ -27,37 +33,25 @@ body {
 }
 
 .loader {
-	width: 100px; 
-	height: 57.74px;
-	background: #ed403a;
+	width: 25vh; 
+	height: 25vh; 
 	display: block;
-	animation: loader-spinning 2s linear infinite;
+	animation: loader-spinning 1s linear infinite;
 	position: absolute;
+	z-index: 100;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	margin: auto;
+	background-image: url(https://dqzrr9k4bjpzk.cloudfront.net/images/9515052/398383003.jpg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 100%;
 }
 
-.loader:before,
-.loader:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-}
-
-.loader:before {
-	bottom: 99%;
-	border-bottom: 28.87px solid #ed403a;
-}
-
-.loader:after {
-	top: 99%;
-	width: 0;
-	border-top: 28.87px solid #ed403a;
+body.loaded .loader {
+	display: none;
 }
 
 @keyframes pageshow {
@@ -70,6 +64,7 @@ body {
 }
 
 .hidden {
+	position: relative;
 	visibility: hidden;
 	background: #000;
 	min-height: 100vh;
@@ -107,7 +102,7 @@ body .hidden:before {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.75);
 }
 
 body.loaded .loader {
@@ -120,6 +115,7 @@ a.logo {
 	left: 5%;
 	top: 5%;
 	height: 60px;
+	width: 60px;
 	line-height: 60px;
 	text-align: center;
 	font-weight: bold;
@@ -128,7 +124,7 @@ a.logo {
 	color: #ed403a;
 	background: none;
 	display: block;
-	border-radius: 100%;
+	border: 1px solid #ed403a;
 }
 
 .nav-toggle {
@@ -215,21 +211,26 @@ nav.main {
 	width: 100%;
 	left: 0;
 	top: 0;
-	background: #000;
+	background: rgba(0,0,0,0.5);
 	min-height: 640px;
 	opacity: 0;
-	transform: translateX(110%);
+	transform: translateY(110%);
 	transition: 
-	transform 0ms ease-in-out 500ms,
-	opacity 350ms ease-in-out 150ms;
+	transform 350ms ease-in-out,
+	opacity 350ms ease-in-out;
 }
 
 body.open nav.main {
 	opacity: 1;
 	transform: translateX(0);
 	transition: 
-	transform 0ms ease-in-out 0ms,
-	opacity 350ms ease-in-out 150ms;
+	transform 350ms ease-in-out,
+	opacity 350ms ease-in-out;
+}
+
+body.leave nav.main {
+	transform: translateY(-110%);
+	transition: transform 350ms ease-in-out;
 }
 
 @keyframes fadeIn {
