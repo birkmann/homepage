@@ -28,7 +28,7 @@ body {
 
 .loader {
 	width: 100px; 
-  	height: 57.74px;
+	height: 57.74px;
 	background: #ed403a;
 	display: block;
 	animation: loader-spinning 2s linear infinite;
@@ -42,22 +42,22 @@ body {
 
 .loader:before,
 .loader:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
 }
 
 .loader:before {
-  bottom: 99%;
-  border-bottom: 28.87px solid #ed403a;
+	bottom: 99%;
+	border-bottom: 28.87px solid #ed403a;
 }
 
 .loader:after {
-  top: 99%;
-  width: 0;
-  border-top: 28.87px solid #ed403a;
+	top: 99%;
+	width: 0;
+	border-top: 28.87px solid #ed403a;
 }
 
 @keyframes pageshow {
@@ -116,18 +116,17 @@ body.loaded .loader {
 
 a.logo {
 	position: fixed;
-	z-index: 1;
+	z-index: 100;
 	left: 5%;
 	top: 5%;
-	width: 80px;
-	height: 80px;
-	line-height: 80px;
+	height: 60px;
+	line-height: 60px;
 	text-align: center;
 	font-weight: bold;
 	font-size: 1.75em;
 	text-decoration: none;
-	color: #111;
-	background: #ed403a;
+	color: #ed403a;
+	background: none;
 	display: block;
 	border-radius: 100%;
 }
@@ -138,16 +137,16 @@ a.logo {
 	right: 5%;
 	top: 5%;
 	margin-left: auto;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ccc;
-    line-height: 60px;
-    width: 60px;
-    height: 60px;
-    background: none;
-    text-align: center;
-    border: 1px solid #ed403a;
-    transition: all 0.15s ease-in-out;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ccc;
+	line-height: 60px;
+	width: 60px;
+	height: 60px;
+	background: none;
+	text-align: center;
+	border: 1px solid #ed403a;
+	transition: all 0.15s ease-in-out;
 }
 
 .nav-toggle:hover {
@@ -157,11 +156,11 @@ a.logo {
 .burger {
 	width: 50%;
 	height: 50%;
-    margin: 25% 25% 15%;
-    position: relative;
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
-    cursor: pointer;
+	margin: 25% 25% 15%;
+	position: relative;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
 }
 
 .burger span {
@@ -210,27 +209,27 @@ body.open .burger span:nth-child(4) {
 }
 
 nav.main {
-    position: fixed;
-    z-index: 100;
-    height: 100vh;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: #000;
-    min-height: 640px;
-    opacity: 0;
-    transform: translateX(110%);
-    transition: 
-    	transform 0ms ease-in-out 500ms,
-    	opacity 350ms ease-in-out 150ms;
+	position: fixed;
+	z-index: 100;
+	height: 100vh;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: #000;
+	min-height: 640px;
+	opacity: 0;
+	transform: translateX(110%);
+	transition: 
+	transform 0ms ease-in-out 500ms,
+	opacity 350ms ease-in-out 150ms;
 }
 
 body.open nav.main {
 	opacity: 1;
-    transform: translateX(0);
-    transition: 
-    	transform 0ms ease-in-out 0ms,
-    	opacity 350ms ease-in-out 150ms;
+	transform: translateX(0);
+	transition: 
+	transform 0ms ease-in-out 0ms,
+	opacity 350ms ease-in-out 150ms;
 }
 
 @keyframes fadeIn {
@@ -244,15 +243,26 @@ body.open nav.main {
 	}
 }
 
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: translateY(100px);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(200px);
+	}
+}
+
 nav.main ul {
 	margin: 0;
 	padding: 0;
 	position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
 	border-left: 1px solid rgba(255,255,255,0.2);
-    padding-left: 50px;
+	padding-left: 50px;
 }
 
 nav.main ul li {
@@ -265,6 +275,10 @@ nav.main ul li {
 body.open nav.main ul li {
 	opacity: 0;
 	animation: fadeIn 0.75s ease-in-out forwards;
+}
+
+body.leaving nav.main ul li {
+	animation: fadeOut 0.75s ease-in-out forwards;
 }
 
 nav.main ul li a {
