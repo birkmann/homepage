@@ -13,6 +13,9 @@ body.loading {
 	background-image: url("../img/body.jpg");
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
+	height: 100vh;
+	overflow: hidden;
 }
 
 *, *:before, *:after {
@@ -41,21 +44,19 @@ body.loading {
 }
 
 .loader {
-	width: 25vh; 
-	height: 25vh; 
+	width: 250px; 
+	height: 250px; 
 	display: block;
 	animation: loader-spinning 1s linear infinite;
-	position: absolute;
+	position: fixed;
 	z-index: 100;
-	top: 0;
+	top: 40%;
 	right: 0;
-	bottom: 0;
 	left: 0;
 	margin: auto;
 	background-image: url(https://dqzrr9k4bjpzk.cloudfront.net/images/9515052/398383003.jpg);
 	background-size: cover;
 	background-position: center;
-	border-radius: 100%;
 }
 
 body.loaded .loader {
