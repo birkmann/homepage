@@ -7,7 +7,7 @@ function onReady(callback) {
 			window.clearInterval(intervalId);
 			callback.call(this);
 		}
-	}, 250);
+	}, 500);
 }
 
 onReady(function() {
@@ -17,11 +17,5 @@ onReady(function() {
 var el = document.querySelector('.nav-toggle');
 el.onclick = function() {
 	document.querySelector('body').classList.toggle('open');
-	// document.querySelector('.burger').classList.toggle('open');
-}
-
-var el = document.querySelector('.nav-close');
-el.onclick = function() {
-	document.querySelector('body').classList.remove('open');
 	// document.querySelector('.burger').classList.toggle('open');
 }
