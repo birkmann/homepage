@@ -31,7 +31,7 @@ document.querySelectorAll('nav.main a').forEach(function(element){
 	element.addEventListener('click',function(e){
 		e.preventDefault();
 		var link = this.getAttribute("href");
-		setTimeout("location.href = '" + link + "';", 2000);
-		document.querySelector('body').classList.add('leaving');
+		setTimeout("location.href = '" + link + "';", 1000);
+		document.querySelector('body').classList.add('leave');
 	});
 });

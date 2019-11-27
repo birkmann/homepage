@@ -246,11 +246,11 @@ body.open nav.main {
 @keyframes fadeOut {
 	0% {
 		opacity: 1;
-		transform: translateY(100px);
+		transform: translateY(0px);
 	}
 	100% {
 		opacity: 0;
-		transform: translateY(200px);
+		transform: translateY(100px);
 	}
 }
 
@@ -277,7 +277,8 @@ body.open nav.main ul li {
 	animation: fadeIn 0.75s ease-in-out forwards;
 }
 
-body.leaving nav.main ul li {
+body.leave nav.main ul li {
+	opacity: 1;
 	animation: fadeOut 0.75s ease-in-out forwards;
 }
 
