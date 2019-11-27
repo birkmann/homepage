@@ -77,6 +77,8 @@ body.loading {
 	background-image: url("../img/wheel.png");
 	background-size: cover;
 	background-position: center;
+	border-radius: 100%;
+	overflow: hidden;
 }
 
 body.loaded .loader {
@@ -92,7 +94,7 @@ body.projects .loader {
 }
 
 body.contact .loader {
-	background-image: url("https://fgl.scene7.com/is/image/FGLSportsLtd/332349139_99_a?bgColor=0,0,0,0&fmt=png-alpha&hei=528&resMode=sharp&qlt=85,1&op_sharpen=1");
+	background-image: url("http://meine-kronkorken.de/wp-content/uploads/2017/05/Sternburg-13.jpg");
 }
 
 @keyframes pageshow {
