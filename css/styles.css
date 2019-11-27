@@ -16,6 +16,7 @@ body.loading {
 	background-attachment: fixed;
 	height: 100vh;
 	overflow: hidden;
+	overflow-y: scroll;
 }
 
 *, *:before, *:after {
