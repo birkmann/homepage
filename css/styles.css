@@ -67,7 +67,7 @@ body.loading {
 	width: 250px; 
 	height: 250px; 
 	display: block;
-	animation: loader-spinning 1.2s linear infinite;
+	animation: loader-spinning 2s linear infinite;
 	position: fixed;
 	z-index: 100;
 	top: 40%;
@@ -81,6 +81,18 @@ body.loading {
 
 body.loaded .loader {
 	display: none;
+}
+
+body.about .loader {
+	background-image: url("https://lapiccolapizzapieusseln.de/images/bg_1.png");
+}
+
+body.projects .loader {
+	background-image: url("https://coloredvinylrecords.com/pictures/t/the-smiths-the-smiths.png");
+}
+
+body.contact .loader {
+	background-image: url("https://fgl.scene7.com/is/image/FGLSportsLtd/332349139_99_a?bgColor=0,0,0,0&fmt=png-alpha&hei=528&resMode=sharp&qlt=85,1&op_sharpen=1");
 }
 
 @keyframes pageshow {
