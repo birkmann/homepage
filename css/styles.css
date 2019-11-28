@@ -172,6 +172,7 @@ a.logo {
 }
 
 nav.main {
+	visibility: hidden;
 	position: fixed;
 	z-index: 100;
 	height: 100vh;
@@ -188,6 +189,7 @@ nav.main {
 }
 
 body.open nav.main {
+	visibility: visible;
 	opacity: 1;
 	transform: translateX(0);
 	transition: 
