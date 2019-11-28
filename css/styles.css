@@ -85,18 +85,6 @@ body.loaded .loader {
 	display: none;
 }
 
-body.about .loader {
-	background-image: url("https://lapiccolapizzapieusseln.de/images/bg_1.png");
-}
-
-body.projects .loader {
-	background-image: url("https://coloredvinylrecords.com/pictures/t/the-smiths-the-smiths.png");
-}
-
-body.contact .loader {
-	background-image: url("http://meine-kronkorken.de/wp-content/uploads/2017/05/Sternburg-13.jpg");
-}
-
 @keyframes pageshow {
 	0% {
 		opacity: 0;
